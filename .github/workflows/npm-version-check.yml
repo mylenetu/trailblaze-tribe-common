@@ -1,0 +1,24 @@
+name: NPM Version Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: check
+        name: Check if version has been updated
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Version update detected
+        if: steps.check.outputs.changed == 'false'
+        run: exit 1

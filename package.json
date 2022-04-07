@@ -1,0 +1,31 @@
+{
+  "name": "trailblaze-tribe-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./build ./node_modules && npm install",
+    "build": "node_modules/.bin/tsc",
+    "patch": "npm version patch --no-git-tag-version",
+    "minor": "npm version minor --no-git-tag-version",
+    "major": "npm version major --no-git-tag-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mylenetu/trailblaze-tribe-common.git"
+  },
+  "author": "Trailblaze Tribe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mylenetu/trailblaze-tribe-common/issues"
+  },
+  "homepage": "https://github.com/mylenetu/trailblaze-tribe-common#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "react": "^18.0.0"
+  }
+}
